@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains d8_website_report_generator.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function d8_website_report_generator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the d8_website_report_generator module.
+    case 'help.page.d8_website_report_generator':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This Module will generate an Excel File through which a new person can easily understand how the website has been built.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function d8_website_report_generator_theme() {
+  return [
+    'd8_website_report_generator' => [
+      'render element' => 'children',
+    ],
+  ];
+}

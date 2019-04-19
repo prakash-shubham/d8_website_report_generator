@@ -1,0 +1,14 @@
+{
+  "name": "drupal/d8_website_report_generator",
+  "type": "drupal-module",
+  "description": "This Module will generate an Excel File through which a new person can easily understand how the website has been built.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/d8_website_report_generator",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/d8_website_report_generator",
+    "source": "http://cgit.drupalcode.org/d8_website_report_generator"
+  },
+  "require": { }
+}
