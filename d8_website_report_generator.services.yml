@@ -1,0 +1,4 @@
+services:
+  d8_website_report_generator.ReportGenerator:
+    class: Drupal\d8_website_report_generator\Services\ReportGeneratorService
+    arguments: []

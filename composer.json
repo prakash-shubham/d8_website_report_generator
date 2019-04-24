@@ -10,5 +10,7 @@
     "issues": "https://www.drupal.org/project/issues/d8_website_report_generator",
     "source": "http://cgit.drupalcode.org/d8_website_report_generator"
   },
-  "require": { }
+  "require": {
+    "phpoffice/phpspreadsheet": "dev-master"
+  }
 }

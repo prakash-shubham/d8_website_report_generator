@@ -1,0 +1,7 @@
+d8_website_report_generator.get_excel:
+  path: '/admin/get_excel'
+  defaults:
+    _form: '\Drupal\d8_website_report_generator\Form\ExcelForm' 
+    _title: 'ExcelForm'
+  requirements: 
+    _permission: 'access content'
