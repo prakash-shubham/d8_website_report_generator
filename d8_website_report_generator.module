@@ -16,14 +16,12 @@ function d8_website_report_generator_help($route_name, RouteMatchInterface $rout
     case 'help.page.d8_website_report_generator':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('This Module will generate an Excel File through which a new person can easily understand how the website has been built.') . '</p>';
+      $output .= '<p>' . t('This Module will generate an Excel File through which a new person can easily understand how the website has been built. Form at /admin/get_excel') . '</p>';
       return $output;
 
     default:
   }
 }
-
-
 
 /**
  * Implements hook_theme().

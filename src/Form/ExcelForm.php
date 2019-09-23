@@ -9,7 +9,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormBase;
 
 
-
 class ExcelForm extends FormBase {
 
  public function getFormId() {
@@ -40,7 +39,7 @@ class ExcelForm extends FormBase {
     $options = [];
 
     // file name for download
-    $fileName = "codexworld_export_data" . date('Ymd') . ".xls";
+    $fileName = "content_report" . date('Ymd') . ".xls";
 
     // headers for download
     header("Content-Disposition: attachment; filename=\"$fileName\"");
@@ -49,20 +48,17 @@ class ExcelForm extends FormBase {
     $flag = false;
 
     foreach ($types as $node_type) {
-      foreach (\Drupal::entityManager()->getFieldDefinitions('node', $node_type->id() ) as $field_name   => $field_definition) {
+      foreach (\Drupal::entityManager()->getFieldDefinitions('node', $node_type->id() ) as $field_name => $field_definition) {
         if (!empty($field_definition->getTargetBundle())) {
 
           $data =  array(array("Content Type" => $node_type->label(), "Field Name" => $field_name, "Field Type" => $field_definition->getType(), "Message" => "none"));
 
           foreach($data as $row) {
-       
             if(!$flag) {
-              // display column names as first row
-        
+              // display column names as first row        
               echo implode("\t", array_keys($row)) . "\n";
               $flag = true;
             }
-
             // filter data
             array_walk($row, 'filterData');
             echo implode("\t", array_values($row)) . "\n";
@@ -70,9 +66,7 @@ class ExcelForm extends FormBase {
         }
       }
     }   
-    
     exit;
 
   }
 }
-
